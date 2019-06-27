@@ -22,7 +22,7 @@ def craw2(url):
     soup = BeautifulSoup(response.text, 'lxml')
 
     for title_href in soup.find_all('div', class_='news_type_block'):
-        print([title.get('title')
+        print([title_href.get('title')
               for title in title_href.find_all('a') if title.get('title')])
 
 # craw2(url)
